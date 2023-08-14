@@ -93,7 +93,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="">Nội dung</label>
-                                <textarea class="form-control tinymce_editor_init @error('content') is-invalid @enderror" name="contents"
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="contents"
                                     rows="8">
                               {{ $product->content }}
                             </textarea>

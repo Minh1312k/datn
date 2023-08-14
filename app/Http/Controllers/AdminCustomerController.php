@@ -79,4 +79,18 @@ class AdminCustomerController extends Controller
     {
         return $this->deleteModelTrait($id, $this->customer);
     }
+
+    public function search(Request $request)
+{
+    $searchTerm = $request->input('searchTerm');
+    
+    $customers = Customer::where('name', 'LIKE', "%$searchTerm%")
+        ->orWhere('phone', 'LIKE', "%$searchTerm%")
+        ->orWhere('email', 'LIKE', "%$searchTerm%")
+        ->paginate(10); 
+    
+    return view('admin.customer.index', ['customers' => $customers]);
+}
+
+
 }

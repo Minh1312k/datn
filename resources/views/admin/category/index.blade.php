@@ -20,6 +20,16 @@
                             <a href="{{ route('categories.create') }}" class="btn btn-success float-right m-2">Add</a>
                         @endcan
 
+                        <div class="col-md-12 mb-2">
+                            <form action="{{ route('categories.search') }}" method="GET" class="form-inline">
+                                <div class="input-group">
+                                    <input type="text" name="search" class="form-control" placeholder="Tìm kiếm danh mục...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="submit">Tìm kiếm</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <div class="col-md-12">
                         <table class="table">
@@ -58,4 +68,5 @@
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection

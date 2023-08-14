@@ -20,6 +20,18 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
+                        <!-- Đoạn mã tìm kiếm -->
+                        <div class="col-md-12">
+                            <form action="{{ route('customers.search') }}" method="GET">
+                                <div class="input-group mb-3">
+                                    <input type="text" name="searchTerm" class="form-control" placeholder="Tìm kiếm theo tên, email hoặc số điện thoại">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="submit">Tìm kiếm</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Kết thúc đoạn mã tìm kiếm -->
                     </div>
                     <div class="col-md-12">
                         <table class="table">
@@ -42,7 +54,6 @@
                                         <td>{{ $customer->phone }}</td>
                                         <td>{{ $customer->address }}</td>
                                         <td>
-
                                             @can('customer-delete')
                                                 <a href="" data-url="{{ route('customers.delete', ['id' => $customer->id]) }}"
                                                     class="btn btn-danger action_delete">Delete</a>

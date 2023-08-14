@@ -65,4 +65,17 @@ class AdminCategoryController extends Controller
     public function delete($id){
         return $this->deleteModelTrait($id, $this->category);
     }
+
+    
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('search'); // Sử dụng request() để lấy dữ liệu từ request
+
+        $categories = $this->category->where('name', 'like', '%' . $searchTerm . '%')
+            ->latest()
+            ->paginate(5);
+
+        return view('admin.category.index', compact('categories'));
+    }
+    
 }

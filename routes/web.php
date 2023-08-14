@@ -50,24 +50,29 @@ Route::prefix('admin')->group(function () {
 			'as' => 'categories.store',
 			'uses' => 'App\Http\Controllers\AdminCategoryController@store'
 		]);
-
+	
 		Route::get('/edit/{id}', [
 			'as' => 'categories.edit',
 			'uses' => 'App\Http\Controllers\AdminCategoryController@edit',
 			'middleware' => 'can:category-edit'
 		]);
-
+	
 		Route::post('/update/{id}', [
 			'as' => 'categories.update',
 			'uses' => 'App\Http\Controllers\AdminCategoryController@update'
 		]);
-
+	
 		Route::get('/delete/{id}', [
 			'as' => 'categories.delete',
 			'uses' => 'App\Http\Controllers\AdminCategoryController@delete',
 			'middleware' => 'can:category-delete'
 		]);
+		Route::get('/search', [
+			'as' => 'categories.search',
+			'uses' => 'App\Http\Controllers\AdminCategoryController@search',
+		]);
 	});
+	
 
 	//Menu
 	Route::prefix('menus')->group(function () {
@@ -132,6 +137,11 @@ Route::prefix('admin')->group(function () {
 			'as' => 'product.delete',
 			'uses' => 'App\Http\Controllers\AdminProductController@delete',
 			'middleware' => 'can:product-delete'
+		]);
+		Route::get('/search', [
+			'as' => 'product.search',
+			'uses' => 'App\Http\Controllers\AdminProductController@search',
+			'middleware' => 'can:product-list'
 		]);
 	});
 
@@ -303,6 +313,13 @@ Route::prefix('admin')->group(function () {
 			'uses' => 'App\Http\Controllers\AdminCustomerController@delete',
 			'middleware' => 'can:customer-delete'
 		]);
+
+		Route::get('/search', [
+			'as' => 'customers.search',
+			'uses' => 'App\Http\Controllers\AdminCustomerController@search',
+			'middleware' => 'can:customer-list' 
+		]);
+		
 	});
 
 	//Statistical

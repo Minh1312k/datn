@@ -40,10 +40,17 @@ class AdminProductController extends Controller
         $this->tag = $tag;
         $this->productTag = $productTag;
     }
-    
-    public function index()
+
+    public function index(Request $request)
     {
-        $products = $this->product->latest()->paginate(5);
+        $searchTerm = $request->input('searchTerm');
+
+        $products = $this->product
+            ->where('name', 'like', '%' . $searchTerm . '%')
+            ->orWhere('category_id', 'like', '%' . $searchTerm . '%')
+            ->latest()
+            ->paginate(5);
+
         return view('admin.product.index', compact('products'));
     }
 
@@ -100,11 +107,10 @@ class AdminProductController extends Controller
                     $tagInstance = $this->tag->firstOrCreate(['name' => $tagItem]);
                     $tagIds[] = $tagInstance->id;
                 }
-                
             }
             $product->tags()->attach($tagIds);
 
-            
+
             DB::commit();
             return redirect()->route('product.index');
         } catch (\Exception $exception) {
@@ -161,11 +167,10 @@ class AdminProductController extends Controller
                     $tagInstance = $this->tag->firstOrCreate(['name' => $tagItem]);
                     $tagIds[] = $tagInstance->id;
                 }
-                
             }
             $product->tags()->sync($tagIds);
 
-            
+
             DB::commit();
             return redirect()->route('product.index');
         } catch (\Exception $exception) {
@@ -177,5 +182,18 @@ class AdminProductController extends Controller
     public function delete($id)
     {
         return $this->deleteModelTrait($id, $this->product);
+    }
+
+    public function search(Request $request)
+    {
+        $searchTerm = $request->input('searchTerm');
+
+        $products = $this->product
+            ->where('name', 'like', '%' . $searchTerm . '%')
+            ->orWhere('category_id', 'like', '%' . $searchTerm . '%')
+            ->latest()
+            ->paginate(5);
+
+        return view('admin.product.index', compact('products'));
     }
 }

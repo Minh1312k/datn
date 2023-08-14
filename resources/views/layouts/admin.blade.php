@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         @include('admin.components.footer')
     </div>
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- jQuery -->
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
