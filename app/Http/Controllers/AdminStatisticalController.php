@@ -22,6 +22,8 @@ class AdminStatisticalController extends Controller
 
 		$get = Statistical::whereBetween('order_date', [$from_date, $to_date])->orderBy('order_date', 'ASC')->get();
 
+		$chart_data = [];
+
 		foreach($get as $key => $val){
 			$chart_data[] = array(
 				'period' => $val->order_date,
@@ -30,7 +32,7 @@ class AdminStatisticalController extends Controller
 				'quantity' => $val->quantity
 			);
 		}
-		echo $data = json_encode($chart_data);
+		return response()->json($chart_data);
 	}
 
 	public function dashboard_filter(Request $request){
@@ -55,6 +57,8 @@ class AdminStatisticalController extends Controller
 			$get = Statistical::whereBetween('order_date', [$sub365days, $now])->orderBy('order_date','ASC')->get();
 		}
 
+		$chart_data = [];
+
 		foreach($get as $key => $val){
 			$chart_data[] = array(
 				'period' => $val->order_date,
@@ -63,7 +67,7 @@ class AdminStatisticalController extends Controller
 				'quantity' => $val->quantity
 			);
 		}
-		echo $data = json_encode($chart_data);
+		return response()->json($chart_data);
 	}
 
 	public function days_order(){
@@ -71,6 +75,8 @@ class AdminStatisticalController extends Controller
 
 		$now = Carbon::now('Asia/Ho_Chi_Minh')->toDateString();
 		$get = Statistical::whereBetween('order_date', [$sub30days, $now])->orderBy('order_date','ASC')->get();
+		
+		$chart_data = [];
 
 		foreach($get as $key => $val){
 			$chart_data[] = array(
@@ -80,6 +86,6 @@ class AdminStatisticalController extends Controller
 				'quantity' => $val->quantity
 			);
 		}
-		echo $data = json_encode($chart_data);
+		return response()->json($chart_data);
 	}
 }
