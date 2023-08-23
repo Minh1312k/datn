@@ -37,10 +37,19 @@
                       </div>
                     </form>
                     <div class="col-md-12">
-                      <div id="chart" style="height: 250px;"></div>
+                      <div id="chart_line" style="height: 250px;"></div>
+                    </div>
+                    <div class="col-md-12">
+                      <div id="chart_bar" style="height: 250px;"></div>
+                    </div>
+                    <div class="col-md-12">
+                      <div id="chart_area" style="height: 250px;"></div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
+
+    
 @endsection

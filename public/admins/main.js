@@ -43,19 +43,34 @@ $(function(){
 $(document).ready(function(){
   chart30daysorder();
 
-  var chart = new Morris.Bar({
-    element: 'chart',
+  var lineChart  = new Morris.Line({
+    element: 'chart_line',
     lineColors: ['#819C79','#fc8710','#FF6541','#A4ADD3','#766B56'],
     parseTime: false,
 
-    // data: [
-    //   { period: '2008', value: 20 },
-    //   { period: '2009', value: 10 },
-    //   { period: '2010', value: 5 },
-    //   { period: '2011', value: 5 },
-    //   { period: '2012', value: 20 }
-    // ],
-    
+    hideHover: 'auto',
+    xkey: 'period',
+    ykeys: ['order','sales','quantity'],
+    labels: ['Đơn hàng','Doanh số','Số lượng']
+  });
+
+  var barChart = new Morris.Bar({
+    element: 'chart_bar',
+    lineColors: ['#819C79','#fc8710','#FF6541','#A4ADD3','#766B56'],
+    parseTime: false,
+
+
+    hideHover: 'auto',
+    xkey: 'period',
+    ykeys: ['order','sales','quantity'],
+    labels: ['Đơn hàng','Doanh số','Số lượng']
+  });
+
+  var areaChart  = new Morris.Area({
+    element: 'chart_area',
+    lineColors: ['#819C79','#fc8710','#FF6541','#A4ADD3','#766B56'],
+    parseTime: false,
+
     hideHover: 'auto',
     xkey: 'period',
     ykeys: ['order','sales','quantity'],
@@ -70,7 +85,9 @@ $(document).ready(function(){
       dataType: "JSON",
       data: {_token:_token},
       success: function(data){
-        chart.setData(data);
+        barChart.setData(data);
+        areaChart.setData(data);
+        lineChart.setData(data);
       }
     });
   };
@@ -84,7 +101,9 @@ $(document).ready(function(){
       dataType: "JSON",
       data: {_token:_token, dashboard_value:dashboard_value},
       success: function(data){
-        chart.setData(data);
+        barChart.setData(data);
+        areaChart.setData(data);
+        lineChart.setData(data);
       }
     });
   });
@@ -118,7 +137,9 @@ $(document).ready(function(){
       dataType: "JSON",
       data: {from_date:from_date, to_date:to_date, _token:_token},
       success: function(data){
-        chart.setData(data);
+        barChart.setData(data);
+        areaChart.setData(data);
+        lineChart.setData(data);
       }
     });
   });
