@@ -14,7 +14,7 @@
                     <div class="productinfo text-center">
                         <img style="width: 100%; height: 170px" src="{{ $product->feature_image_path }}" alt="" />
                         <h2>{{ number_format($product->price) }} VNĐ</h2>
-                        <p>{{ $product->name }}</p>
+                        <p>{{ str_limit($product->name,25) }}</p>
                         {{-- <a onclick="AddCart({{ $product->id }})" href="javascript:"
                                 class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>
                                 Add to cart</a> --}}

@@ -117,7 +117,7 @@
                                 @endif
                                 <span>
                                     @php
-                                        $vnd_to_usd = $total / 23625;
+                                        $vnd_to_usd = $total / 24000;
                                         $total_paypal = round($vnd_to_usd);
                                         session()->put('total_paypal', $total_paypal);
                                     @endphp
@@ -151,7 +151,7 @@
         <!--/#do_action-->
     @else
         <h4 style="height: 200px">
-            <center>Thêm vào giỏ hàng trước mới thanh toán được nhé :)</center>
+            <center>Giỏ hàng rỗng, hãy thêm sản phẩm vào giỏ hàng !</center>
         </h4>
         <div class="container" style="width: 80%">
             <!--recommended_items-->

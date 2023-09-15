@@ -28,30 +28,11 @@
                                     <option value="{{ Request::url() }}?sort_by=none">--Lọc--</option>
                                     <option value="{{ Request::url() }}?sort_by=tang_dan">--Giá tăng dần--</option>
                                     <option value="{{ Request::url() }}?sort_by=giam_dan">--Giá giảm dần--</option>
-                                    <option value="{{ Request::url() }}?sort_by=kytu_az">Lọc theo tên từ A đến Z</option>
-                                    <option value="{{ Request::url() }}?sort_by=kytu_za">Lọc theo tên từ Z đến A</option>
+                                    {{-- <option value="{{ Request::url() }}?sort_by=kytu_az">Lọc theo tên từ A đến Z</option>
+                                    <option value="{{ Request::url() }}?sort_by=kytu_za">Lọc theo tên từ Z đến A</option> --}}
                                 </select>
                             </form>
                         </div>
-                        {{-- <div class="col-md-4">
-                            <label for="amount">Lọc theo giá</label>
-                            <form action="">
-                                @csrf
-                                <div id="slider-range"></div>
-                                <div style="float: left">
-                                    <input type="text" id="amount_start" readonly
-                                        style="border:0; color:#13bc2c; font-weight:bold;">
-                                </div>
-                                <div style="float: right">
-                                    <input type="text" id="amount_end" readonly
-                                        style="border:0; color:#13bc2c; font-weight:bold;">
-                                </div>
-                                    <input type="hidden" name="start_price" id="start_price">
-                                    <input type="hidden" name="end_price" id="end_price">
-                                </div>
-                                <input type="submit" name="filter_price" value="Lọc giá" class="btn btn-default">
-                            </form>
-                        </div> --}}
                     </div>
                     <div class="features_items">
                         <!--features_items-->

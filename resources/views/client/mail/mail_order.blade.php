@@ -15,14 +15,14 @@
 <body>
   <div class="container" style="background: rgb(231, 222, 222); border-radious: 12px; padding: 15px">
     <div class="col-md-12">
-      <p><center>Đây là mail tự động. Quý khách vui lòng không trả lời mail này.</center></p>
+      <p><center>Đây là mail trả lời tự động, để tránh các trường hợp lừa đảo, vui lòng không trả lời hay cung cấp bất cứ thông tin nào cho địa chỉ mail này.</center></p>
       <div class="row">
         <div class="col-md-6">
-          <h4><center>Công ty Minh DATN</center></h4>
+          <h4><center>Hóa đơn điện tử</center></h4>
         </div>
         
         <div class="col-md-6">
-          Chào bạn {{ $customer_array['customer_name'] }}
+          Xin chào {{ $customer_array['customer_name'] }}
         </div>
         
         <div class="col-md-12">
@@ -75,7 +75,7 @@
         </div>
 
         <div class="col-md-12">
-          <p><center>Cảm ơn quý khách đã đặt hàng. Mọi chi tiết xin liên hệ 0987654321.</center></p>
+          <p><center>Cảm ơn quý khách đã đặt hàng. Mọi chi tiết xin liên hệ 0963107439.</center></p>
         </div>
       </div>
     </div>

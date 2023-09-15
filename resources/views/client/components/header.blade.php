@@ -37,8 +37,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
-                    <div class="logo pull-left">
-                        <a href="{{ route('home') }}"><img src="{{ asset('eshopper/images/home/logo.png') }}"
+                    <div class="logo pull-left">    
+                        <a href="{{ route('home') }}"><img style="height:150px" src="{{ asset('eshopper/images/home/logo.png') }}"
                                 alt="" /></a>
                     </div>
                 </div>

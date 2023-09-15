@@ -53,6 +53,10 @@
                                         @endif
 
                                         @if($order->order_status == 3)
+                                            <td>Giao hàng thành công</td>
+                                        @endif
+
+                                        @if($order->order_status == 4)
                                             <td>Bị hủy</td>
                                         @endif
 

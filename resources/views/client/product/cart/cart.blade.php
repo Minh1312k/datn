@@ -107,7 +107,7 @@
         <!--/#do_action-->
     @else
         <h4 style="height: 200px">
-            <center>Giỏ hàng trống, hãy quay lại mua thêm sản phẩm nào :)</center>
+            <center>Giỏ hàng rỗng !</center>
         </h4>
         <div class="container" style="width: 80%">
             <!--recommended_items-->

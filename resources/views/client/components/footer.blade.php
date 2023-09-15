@@ -20,11 +20,11 @@
                     <div class="single-widget">
                         <h2>Quick Shop</h2>
                         <ul class="nav nav-pills nav-stacked">
-                            <li><a href="#">Iphone</a></li>
-                            <li><a href="#">Ipad</a></li>
-                            <li><a href="#">Macbook</a></li>
-                            <li><a href="#">Airpods</a></li>
-                            <li><a href="#">Apple Watch</a></li>
+                            <li><a href="#">Play Station</a></li>
+                            <li><a href="#">Xbox</a></li>
+                            <li><a href="#">Nintendo Switch</a></li>
+                            <li><a href="#">Controller</a></li>
+                            <li><a href="#"></a></li>
                         </ul>
                     </div>
                 </div>

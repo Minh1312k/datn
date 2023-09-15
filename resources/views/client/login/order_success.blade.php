@@ -15,20 +15,25 @@
 @section('content')
     <section id="cart_items">
         <div class="container">
-
-            <h4 style="height: 200px">
-                <center>Cảm ơn bạn đã đặt hàng, vui lòng kiểm tra Email, chúng tôi sẽ liên hệ với bạn sớm nhất :)</center>
-            </h4>
-
+            <div class="text-center" style="height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <h4>Cảm ơn bạn đã đặt hàng, vui lòng kiểm tra Email.</h4>
+                <p id="redirect-message">Bạn sẽ được đưa về trang chủ trong 3 giây</p>
+            </div>
         </div>
-        <script type="text/javascript">
-            function Redirect() {
-                window.location="http://127.0.0.1:8000";
-            }
-
-            document.write("Bạn sẽ được đưa về trang chủ trong 3 giây");
-            setTimeout('Redirect()', 3000);
-        </script>
     </section>
     <!--/#cart_items-->
+
+    <style>
+        #redirect-message {
+            margin-top: 20px; /* Khoảng cách từ đoạn văn bản đến h4 */
+        }
+    </style>
+
+    <script type="text/javascript">
+        function Redirect() {
+            window.location = "http://127.0.0.1:8000";
+        }
+
+        setTimeout('Redirect()', 3000);
+    </script>
 @endsection

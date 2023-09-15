@@ -835,7 +835,7 @@ h2.title:before{
 
 
 h2.title {
-  color: #0099FF;
+  color: #000002;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -862,7 +862,7 @@ h2.title {
 }
 
 .productinfo h2{
-	color: #0099FF;
+	color: #000000;
 	font-family: 'Roboto', sans-serif;
 	font-size: 24px;
 	font-weight: 700;
